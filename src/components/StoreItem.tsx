@@ -42,11 +42,11 @@ function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
           ) : (
             <div
               className="d-flex align-items-center flex-column"
-              style={{ gap: ".5rem" }}
+              style={styles.container}
             >
               <div
                 className="d-flex align-items-center justify-content-center"
-                style={{ gap: ".5rem" }}
+                style={styles.container}
               >
                 <Button onClick={() => decreaseCartQuantity(id)}> - </Button>
                 <div>
@@ -60,8 +60,7 @@ function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
                 size="sm"
                 onClick={() => removeFromCart(id)}
               >
-                {" "}
-                Remove{" "}
+                Remove
               </Button>
             </div>
           )}
@@ -70,5 +69,11 @@ function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
     </Card>
   );
 }
+
+const styles = {
+  container: {
+    gap: ".5rem",
+  },
+};
 
 export default StoreItem;
